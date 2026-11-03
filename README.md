@@ -1,1 +1,352 @@
-# Spetsnaz-service-2
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Сантехник и электрик 24/7 в Караганде. Установка, замена и ремонт сантехники, работы с электрикой и электропроводкой.">
+  <meta name="theme-color" content="#0b1d35">
+  <title>Сантехник и электрик 24/7 в Караганде</title>
+  <style>
+    :root {
+      --navy:#0b1d35;
+      --navy2:#102b4c;
+      --orange:#ff781f;
+      --orange2:#ff9a42;
+      --ink:#142338;
+      --muted:#65758a;
+      --paper:#f4f7fb;
+      --white:#fff;
+      --line:#e4eaf1;
+      --shadow:0 18px 50px rgba(7,25,48,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1160px,calc(100% - 40px));margin:0 auto}
+    .topbar{position:absolute;z-index:5;top:0;left:0;width:100%;padding:22px 0;color:#fff}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:0;font-weight:900;letter-spacing:.06em;font-size:17px}
+    .nav-right{display:flex;align-items:center;gap:24px}
+    .instagram{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px;color:#fff;opacity:.94}
+    .instagram svg{width:19px;height:19px}
+    .lang{display:flex;align-items:center;gap:5px;padding:5px;background:#ffffff18;border:1px solid #ffffff35;border-radius:30px}
+    .lang button{border:0;background:transparent;color:#c8d2df;padding:7px 11px;border-radius:22px;font-weight:800;cursor:pointer}
+    .lang button.active{background:var(--orange);color:#fff}
+    .hero{position:relative;overflow:hidden;min-height:690px;padding:150px 0 88px;color:#fff;background:
+      radial-gradient(ellipse at 82% 45%,rgba(255,120,31,.24),transparent 30%),
+      linear-gradient(120deg,#08182d 0%,#0d2746 58%,#12395b 100%)}
+    .hero:before{content:"";position:absolute;width:580px;height:580px;border:1px solid #ffffff12;border-radius:50%;right:-140px;top:90px;box-shadow:0 0 0 45px #ffffff08,0 0 0 95px #ffffff05}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:50px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#ffc08e;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}
+    .eyebrow:before{content:"";width:28px;height:2px;background:var(--orange)}
+    h1{font-size:clamp(38px,5.1vw,66px);line-height:1.04;letter-spacing:-.045em;margin:0 0 24px;font-weight:900;max-width:700px}
+    h1 span{color:#ff8a38}
+    .hero-copy{font-size:18px;color:#d7e1ed;max-width:590px;margin:0 0 13px}
+    .hero-note{font-size:15px;color:#aebed0;margin:0 0 32px}
+    .cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--orange);color:#fff;font-weight:900;letter-spacing:.035em;padding:17px 25px;border-radius:12px;box-shadow:0 10px 28px #ff781f55;transition:transform .2s,background .2s;animation:pulse 2.2s infinite}
+    .cta:hover{background:#ff8b39;transform:translateY(-2px)}
+    .cta svg{width:21px;height:21px;flex:none}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 #ff781f55,0 10px 28px #ff781f44;transform:scale(1)}50%{box-shadow:0 0 0 9px #ff781f00,0 12px 34px #ff781f66;transform:scale(1.025)}}
+    .section{padding:88px 0}
+    .section.soft{background:var(--paper)}
+    .section-head{text-align:center;max-width:720px;margin:0 auto 44px}
+    .kicker{color:var(--orange);font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}
+    h2{font-size:clamp(30px,4vw,43px);line-height:1.1;letter-spacing:-.035em;color:var(--navy);margin:0 0 13px;font-weight:900}
+    .section-head p{margin:0;color:var(--muted);font-size:16px}
+    .service-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:stretch}
+    .service-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:0 10px 35px #0b1d3509}
+    .service-card.primary{border-top:5px solid var(--orange)}
+    .service-card.secondary{border-top:5px solid var(--navy2)}
+    .service-title{display:flex;align-items:center;gap:15px;margin-bottom:23px}
+    .service-icon{width:52px;height:52px;border-radius:16px;background:#fff0e6;color:var(--orange);display:grid;place-items:center;flex:none}
+    .secondary .service-icon{background:#eaf0f7;color:var(--navy2)}
+    .service-icon svg{width:27px;height:27px}
+    h3{font-size:23px;color:var(--navy);margin:0;font-weight:900}
+    .service-list{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+    .service-list li{padding-left:19px;position:relative}
+    .service-list li:before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+    .service-list strong{display:block;color:var(--ink);font-size:16px;margin-bottom:2px}
+    .service-list span{display:block;color:var(--muted);font-size:14px;line-height:1.5}
+    .mid-cta{text-align:center;margin-top:34px}
+    .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .why-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 20px;min-height:180px}
+    .why-icon{width:43px;height:43px;border-radius:13px;background:#fff0e6;color:var(--orange);display:grid;place-items:center;margin-bottom:17px}
+    .why-icon svg{width:23px;height:23px}
+    .why-card h3{font-size:17px;margin-bottom:7px}
+    .why-card p{font-size:14px;color:var(--muted);margin:0}
+    .final{background:linear-gradient(115deg,#091a30,#123456);color:#fff;text-align:center;padding:76px 0;position:relative;overflow:hidden}
+    .final:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;border:1px solid #ffffff15;left:-170px;top:-220px;box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff05}
+    .final .container{position:relative}
+    .final h2{color:#fff;max-width:700px;margin:0 auto 15px}
+    .final p{color:#c8d5e3;margin:0 auto 28px;max-width:620px}
+    footer{background:#071528;color:#aebed0;padding:27px 0}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .footer-brand{font-weight:900;letter-spacing:.06em;color:#fff}
+    .footer-links{display:flex;align-items:center;gap:22px;font-size:14px}
+    .footer-links a:hover,.instagram:hover{color:#ffad70}
+    .copyright{font-size:12px;color:#74879e;margin-top:8px}
+    .wa-float{position:fixed;z-index:10;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#20c66a;color:white;box-shadow:0 8px 25px #0003;animation:floatPulse 2s infinite}
+    .wa-float svg{width:30px;height:30px}
+    @keyframes floatPulse{0%,100%{box-shadow:0 0 0 0 #20c66a66,0 8px 25px #0003}50%{box-shadow:0 0 0 10px #20c66a00,0 8px 25px #0003}}
+    @media(max-width:850px){
+      .hero{min-height:auto;padding:130px 0 65px}
+      .hero-grid{grid-template-columns:1fr;gap:25px}
+.service-layout{grid-template-columns:1fr}
+      .why-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:560px){
+      .container{width:min(100% - 30px,1160px)}
+      .topbar{padding:15px 0}
+      .brand{font-size:14px;gap:8px}
+      .brand-mark{width:34px;height:34px}
+      .nav-right{gap:12px}
+      .instagram{font-size:0;gap:0}
+      .instagram svg{width:21px;height:21px}
+      .lang button{padding:6px 9px;font-size:12px}
+      .hero{padding:112px 0 52px}
+      h1{font-size:39px}
+      .hero-copy{font-size:16px}
+.section{padding:65px 0}
+      .section-head{margin-bottom:30px}
+      .service-card{padding:23px 20px;border-radius:18px}
+      h3{font-size:20px}
+      .why-grid{gap:11px}
+      .why-card{padding:19px 15px;min-height:175px}
+      .why-card h3{font-size:15px}
+      .why-card p{font-size:13px}
+      .footer-inner{align-items:flex-start;flex-direction:column}
+      .footer-links{gap:18px;flex-wrap:wrap}
+      .cta{width:100%;padding:16px 18px}
+      .wa-float{width:54px;height:54px;right:14px;bottom:14px}
+    }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Сантехнические и электрические услуги">
+        <span data-i18n="brandTitle">САНТЕХНИК И ЭЛЕКТРИК</span>
+      </a>
+      <div class="nav-right">
+        <div class="lang" aria-label="Выбор языка">
+          <button type="button" class="active" data-lang="ru">RU</button>
+          <button type="button" data-lang="kz">KZ</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow" data-i18n="eyebrow">САНТЕХНИК И ЭЛЕКТРИК · КАРАГАНДА</div>
+          <h1 data-i18n="headline">САНТЕХНИК И ЭЛЕКТРИК <span>24/7</span> В КАРАГАНДЕ</h1>
+          <p class="hero-copy" data-i18n="heroCopy">Установка, замена, ремонт сантехники, монтаж электропроводки и другие работы.</p>
+          <p class="hero-note" data-i18n="heroNote">Качественно, аккуратно и с гарантией.</p>
+          <a class="cta wa-link" href="https://wa.me/77072762010?text=Здравствуйте%21%20Хочу%20проконсультироваться%20по%20поводу%20ваших%20услуг." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.4-4.9A8.4 8.4 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 8.2c.3-.6.6-.6.9-.6h.5c.2 0 .4.1.5.4l.7 1.7c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4 0 .7.5.9 1.2 1.6 2.1 2.1.3.2.5.2.7 0l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.5-.5.5-1.2.7-1.9.6-1.1-.1-2.5-.8-3.8-2-1.2-1.1-2.1-2.5-2.3-3.5-.2-.9.1-1.8.6-2.5Z" fill="currentColor"/></svg>
+            <span data-i18n="whatsapp">НАПИСАТЬ В WHATSAPP</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker" data-i18n="servicesKicker">ЧТО МЫ ДЕЛАЕМ</div>
+          <h2 data-i18n="servicesTitle">НАШИ УСЛУГИ</h2>
+          <p data-i18n="servicesIntro">Сантехнические работы и работы с электрикой — для дома, квартиры и других помещений.</p>
+        </div>
+        <div class="service-layout">
+          <article class="service-card primary">
+            <div class="service-title">
+              <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 10h16M7 10V7a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v3M12 4V2M9 2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17 10v3a5 5 0 0 1-10 0v-3M12 18v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 20c-1.3 0-2.2.9-2.2 2h4.4c0-1.1-.9-2-2.2-2Z" fill="currentColor"/>
+              </svg></div>
+              <h3 data-i18n="plumbingTitle">САНТЕХНИЧЕСКИЕ РАБОТЫ</h3>
+            </div>
+            <ul class="service-list">
+              <li><strong data-i18n="plumb1Title">Установка и замена сантехники</strong><span data-i18n="plumb1Text">Унитазы, раковины, смесители, душевые кабины, ванны, джакузи и другое сантехническое оборудование.</span></li>
+              <li><strong data-i18n="plumb2Title">Водонагреватели</strong><span data-i18n="plumb2Text">Установка, замена и демонтаж водонагревателей и бойлеров.</span></li>
+              <li><strong data-i18n="plumb3Title">Отопление</strong><span data-i18n="plumb3Text">Установка и замена радиаторов отопления, полотенцесушителей и подключение отопительного оборудования.</span></li>
+              <li><strong data-i18n="plumb4Title">Ремонт сантехники</strong><span data-i18n="plumb4Text">Устранение протечек, замена труб, ремонт и обслуживание сантехнического оборудования.</span></li>
+              <li><strong data-i18n="plumb5Title">Прочистка труб</strong><span data-i18n="plumb5Text">Устранение засоров и прочистка канализационных труб.</span></li>
+              <li><strong data-i18n="plumb6Title">Сантехника под ключ</strong><span data-i18n="plumb6Text">Комплексное выполнение сантехнических работ.</span></li>
+            </ul>
+          </article>
+          <article class="service-card secondary">
+            <div class="service-title">
+              <div class="service-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h7l-1 8 10-13h-7l0-7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+              <h3 data-i18n="electricTitle">РАБОТЫ С ЭЛЕКТРИКОЙ</h3>
+            </div>
+            <ul class="service-list">
+              <li><strong data-i18n="elec1Title">Электропроводка</strong><span data-i18n="elec1Text">Монтаж, демонтаж и полная замена электропроводки.</span></li>
+              <li><strong data-i18n="elec2Title">Установка электрооборудования</strong><span data-i18n="elec2Text">Монтаж розеток, выключателей, осветительных приборов и подключение бытовой техники.</span></li>
+              <li><strong data-i18n="elec3Title">Электрощиты</strong><span data-i18n="elec3Text">Сборка, установка и подключение электрощитов, монтаж автоматических выключателей.</span></li>
+              <li><strong data-i18n="elec4Title">Ремонт электрики</strong><span data-i18n="elec4Text">Поиск и устранение неисправностей, восстановление электроснабжения.</span></li>
+              <li><strong data-i18n="elec5Title">Электрика под ключ</strong><span data-i18n="elec5Text">Комплексное выполнение работ с электропроводкой и электрооборудованием.</span></li>
+            </ul>
+          </article>
+        </div>
+        <div class="mid-cta">
+          <a class="cta wa-link" href="https://wa.me/77072762010?text=Здравствуйте%21%20Хочу%20проконсультироваться%20по%20поводу%20ваших%20услуг." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.4-4.9A8.4 8.4 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 8.2c.3-.6.6-.6.9-.6h.5c.2 0 .4.1.5.4l.7 1.7c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4 0 .7.5.9 1.2 1.6 2.1 2.1.3.2.5.2.7 0l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.5-.5.5-1.2.7-1.9.6-1.1-.1-2.5-.8-3.8-2-1.2-1.1-2.1-2.5-2.3-3.5-.2-.9.1-1.8.6-2.5Z" fill="currentColor"/></svg>
+            <span data-i18n="whatsapp">НАПИСАТЬ В WHATSAPP</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="advantages">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="whyTitle">ПОЧЕМУ ВЫБИРАЮТ НАС?</h2>
+        </div>
+        <div class="why-grid">
+          <article class="why-card">
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 21c.7-4 3.5-6 8-6s7.3 2 8 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <h3 data-i18n="why1Title">Опытные мастера</h3><p data-i18n="why1Text">Профессиональный подход к выполнению каждого заказа.</p>
+          </article>
+          <article class="why-card">
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none"><path d="m4 12 5 5L20 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3 data-i18n="why2Title">Аккуратная работа</h3><p data-i18n="why2Text">Бережно относимся к вашему имуществу и соблюдаем порядок.</p>
+          </article>
+          <article class="why-card">
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 19 6v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z" stroke="currentColor" stroke-width="2"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3 data-i18n="why3Title">Гарантия на работы</h3><p data-i18n="why3Text">Уверенность в качестве выполненных услуг.</p>
+          </article>
+          <article class="why-card">
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="2"/></svg></div>
+            <h3 data-i18n="why4Title">Весь город</h3><p data-i18n="why4Text">Работаем во всех районах Караганды.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="container">
+        <h2 data-i18n="finalTitle">НУЖЕН САНТЕХНИК ИЛИ ЭЛЕКТРИК?</h2>
+        <p data-i18n="finalText">Свяжитесь с нами в WhatsApp, расскажите о своей задаче — проконсультируем и поможем подобрать необходимую услугу.</p>
+        <a class="cta wa-link" href="https://wa.me/77072762010?text=Здравствуйте%21%20Хочу%20проконсультироваться%20по%20поводу%20ваших%20услуг." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.4-4.9A8.4 8.4 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 8.2c.3-.6.6-.6.9-.6h.5c.2 0 .4.1.5.4l.7 1.7c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4 0 .7.5.9 1.2 1.6 2.1 2.1.3.2.5.2.7 0l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.5-.5.5-1.2.7-1.9.6-1.1-.1-2.5-.8-3.8-2-1.2-1.1-2.1-2.5-2.3-3.5-.2-.9.1-1.8.6-2.5Z" fill="currentColor"/></svg>
+          <span data-i18n="whatsapp">НАПИСАТЬ В WHATSAPP</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand" data-i18n="brandTitle">САНТЕХНИК И ЭЛЕКТРИК</div>
+        <div class="copyright">© <span id="year"></span> <span data-i18n="copyright">Все права защищены.</span></div>
+      </div>
+      <div class="footer-links">
+        <a class="wa-link" href="https://wa.me/77072762010?text=Здравствуйте%21%20Хочу%20проконсультироваться%20по%20поводу%20ваших%20услуг." target="_blank" rel="noopener">WhatsApp</a>
+        <span data-i18n="city">Караганда</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float wa-link" href="https://wa.me/77072762010?text=Здравствуйте%21%20Хочу%20проконсультироваться%20по%20поводу%20ваших%20услуг." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.4-4.9A8.4 8.4 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 8.2c.3-.6.6-.6.9-.6h.5c.2 0 .4.1.5.4l.7 1.7c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4 0 .7.5.9 1.2 1.6 2.1 2.1.3.2.5.2.7 0l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.5-.5.5-1.2.7-1.9.6-1.1-.1-2.5-.8-3.8-2-1.2-1.1-2.1-2.5-2.3-3.5-.2-.9.1-1.8.6-2.5Z" fill="currentColor"/></svg>
+  </a>
+
+  <script>
+    const phone = "77072762010"; // WhatsApp для заявок
+    const messages = {
+      ru: "Здравствуйте! Хочу проконсультироваться по поводу ваших услуг.",
+      kz: "Сәлеметсіз бе! Қызметтеріңіз бойынша кеңес алғым келеді."
+    };
+
+    const translations = {
+      ru: {
+        eyebrow:"САНТЕХНИК И ЭЛЕКТРИК · КАРАГАНДА",
+        headline:'САНТЕХНИК И ЭЛЕКТРИК <span>24/7</span> В КАРАГАНДЕ',
+        heroCopy:"Установка, замена, ремонт сантехники, монтаж электропроводки и другие работы.",
+        heroNote:"Качественно, аккуратно и с гарантией.",
+        whatsapp:"НАПИСАТЬ В WHATSAPP", brandTitle:"САНТЕХНИК И ЭЛЕКТРИК",visualLeft:"САНТЕХНИКА",visualRight:"ЭЛЕКТРИКА · 24/7",visualPlumbing:"Установка · ремонт · замена",visualElectric:"Проводка · монтаж · ремонт",visualTag:"ВЫЕЗД ПО ВСЕЙ КАРАГАНДЕ",
+        servicesKicker:"ЧТО МЫ ДЕЛАЕМ",servicesTitle:"НАШИ УСЛУГИ",
+        servicesIntro:"Сантехнические работы и работы с электрикой — для дома, квартиры и других помещений.",
+        plumbingTitle:"САНТЕХНИЧЕСКИЕ РАБОТЫ",electricTitle:"РАБОТЫ С ЭЛЕКТРИКОЙ",
+        plumb1Title:"Установка и замена сантехники",plumb1Text:"Унитазы, раковины, смесители, душевые кабины, ванны, джакузи и другое сантехническое оборудование.",
+        plumb2Title:"Водонагреватели",plumb2Text:"Установка, замена и демонтаж водонагревателей и бойлеров.",
+        plumb3Title:"Отопление",plumb3Text:"Установка и замена радиаторов отопления, полотенцесушителей и подключение отопительного оборудования.",
+        plumb4Title:"Ремонт сантехники",plumb4Text:"Устранение протечек, замена труб, ремонт и обслуживание сантехнического оборудования.",
+        plumb5Title:"Прочистка труб",plumb5Text:"Устранение засоров и прочистка канализационных труб.",
+        plumb6Title:"Сантехника под ключ",plumb6Text:"Комплексное выполнение сантехнических работ.",
+        elec1Title:"Электропроводка",elec1Text:"Монтаж, демонтаж и полная замена электропроводки.",
+        elec2Title:"Установка электрооборудования",elec2Text:"Монтаж розеток, выключателей, осветительных приборов и подключение бытовой техники.",
+        elec3Title:"Электрощиты",elec3Text:"Сборка, установка и подключение электрощитов, монтаж автоматических выключателей.",
+        elec4Title:"Ремонт электрики",elec4Text:"Поиск и устранение неисправностей, восстановление электроснабжения.",
+        elec5Title:"Электрика под ключ",elec5Text:"Комплексное выполнение работ с электропроводкой и электрооборудованием.",
+        whyTitle:"ПОЧЕМУ ВЫБИРАЮТ НАС?",
+        why1Title:"Опытные мастера",why1Text:"Профессиональный подход к выполнению каждого заказа.",
+        why2Title:"Аккуратная работа",why2Text:"Бережно относимся к вашему имуществу и соблюдаем порядок.",
+        why3Title:"Гарантия на работы",why3Text:"Уверенность в качестве выполненных услуг.",
+        why4Title:"Весь город",why4Text:"Работаем во всех районах Караганды.",
+        finalTitle:"НУЖЕН САНТЕХНИК ИЛИ ЭЛЕКТРИК?",
+        finalText:"Свяжитесь с нами в WhatsApp, расскажите о своей задаче — проконсультируем и поможем подобрать необходимую услугу.",
+        copyright:"Все права защищены.",city:"Караганда"
+      },
+      kz: {
+        eyebrow:"САНТЕХНИК ЖӘНЕ ЭЛЕКТРИК · ҚАРАҒАНДЫ",
+        headline:'ҚАРАҒАНДЫДА 24/7 САНТЕХНИК ЖӘНЕ ЭЛЕКТРИК',
+        heroCopy:"Сантехниканы орнату, ауыстыру және жөндеу, электр сымдарын тарту және басқа да жұмыстар.",
+        heroNote:"Сапалы, ұқыпты және кепілдікпен орындаймыз.",
+        whatsapp:"WHATSAPP-ҚА ЖАЗУ",brandTitle:"САНТЕХНИК И ЭЛЕКТРИК",
+        servicesKicker:"БІЗ НЕ ІСТЕЙМІЗ",servicesTitle:"БІЗДІҢ ҚЫЗМЕТТЕР",
+        servicesIntro:"Үйге, пәтерге және басқа да нысандарға сантехникалық және электр жұмыстары.",
+        plumbingTitle:"САНТЕХНИКАЛЫҚ ЖҰМЫСТАР",electricTitle:"ЭЛЕКТР ЖҰМЫСТАРЫ",
+        plumb1Title:"Сантехниканы орнату және ауыстыру",plumb1Text:"Унитаздар, қолжуғыштар, араластырғыштар, душ кабиналары, ванналар, джакузи және басқа сантехникалық жабдықтар.",
+        plumb2Title:"Су жылытқыштар",plumb2Text:"Су жылытқыштар мен бойлерлерді орнату, ауыстыру және бөлшектеу.",
+        plumb3Title:"Жылыту жүйесі",plumb3Text:"Жылыту радиаторлары мен сүлгі кептіргіштерді орнату және ауыстыру, жылыту жабдықтарын қосу.",
+        plumb4Title:"Сантехниканы жөндеу",plumb4Text:"Судың ағуын жою, құбырларды ауыстыру, сантехникалық жабдықтарды жөндеу және қызмет көрсету.",
+        plumb5Title:"Құбырларды тазалау",plumb5Text:"Бітелген құбырларды және кәріз жүйесін тазалау.",
+        plumb6Title:"Сантехника жұмыстары толықтай",plumb6Text:"Сантехникалық жұмыстар кешенін толық орындау.",
+        elec1Title:"Электр сымдары",elec1Text:"Электр сымдарын тарту, бөлшектеу және толық ауыстыру.",
+        elec2Title:"Электр жабдықтарын орнату",elec2Text:"Розеткалар, ажыратқыштар, жарықтандыру құрылғыларын орнату және тұрмыстық техниканы қосу.",
+        elec3Title:"Электр қалқандары",elec3Text:"Электр қалқандарын жинау, орнату және қосу, автоматты ажыратқыштарды монтаждау.",
+        elec4Title:"Электр жүйесін жөндеу",elec4Text:"Ақауларды анықтау және жою, электрмен жабдықтауды қалпына келтіру.",
+        elec5Title:"Электр жұмыстары толықтай",elec5Text:"Электр сымдары мен жабдықтарына қатысты жұмыстар кешенін орындау.",
+        whyTitle:"НЕГЕ БІЗДІ ТАҢДАЙДЫ?",
+        why1Title:"Тәжірибелі шеберлер",why1Text:"Әр тапсырысты кәсіби деңгейде орындаймыз.",
+        why2Title:"Ұқыпты жұмыс",why2Text:"Мүлкіңізге ұқыпты қарап, тазалық пен тәртіпті сақтаймыз.",
+        why3Title:"Жұмысқа кепілдік",why3Text:"Орындалған жұмыстың сапасына кепілдік береміз.",
+        why4Title:"Қаланың барлық ауданы",why4Text:"Қарағандының барлық аудандарына қызмет көрсетеміз.",
+        finalTitle:"САНТЕХНИК НЕМЕСЕ ЭЛЕКТРИК КЕРЕК ПЕ?",
+        finalText:"WhatsApp арқылы хабарласып, мәселеңізді айтыңыз — кеңес беріп, қажетті қызметті таңдауға көмектесеміз.",
+        copyright:"Барлық құқықтар қорғалған.",city:"Қарағанды"
+      }
+    };
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang === "kz" ? "kk" : "ru";
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.dataset.i18n;
+        if (translations[lang][key] !== undefined) el.innerHTML = translations[lang][key];
+      });
+      document.querySelectorAll(".lang button").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+        btn.setAttribute("aria-pressed", btn.dataset.lang === lang ? "true" : "false");
+      });
+      const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(messages[lang])}`;
+      document.querySelectorAll("a.wa-link").forEach(link => {
+        link.setAttribute("href", waUrl);
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener");
+      });
+      localStorage.setItem("spetsnaz-language", lang);
+    }
+    document.querySelectorAll(".lang button").forEach(btn => btn.addEventListener("click", () => setLanguage(btn.dataset.lang)));
+    document.getElementById("year").textContent = new Date().getFullYear();
+    setLanguage(localStorage.getItem("spetsnaz-language") || "ru");
+  </script>
+</body>
+</html>
